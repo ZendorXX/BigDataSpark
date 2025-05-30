@@ -13,5 +13,17 @@ services:
             - ./sql_scripts:/docker-entrypoint-initdb.d
             - ./исходные данные:/mock_data
 
+    spark:
+        image: jupyter/pyspark-notebook:latest
+        container_name: spark_big_data_lab2
+        environment:
+            JUPYTER_TOKEN: "password"
+        ports:
+            - "4040:4040" # Spark UI
+            - "8888:8888" # Jupyter Notebook
+        volumes:
+            - ./notebooks:/home/jovyan/work
+            - ./jars:/opt/spark/jars
+
 volumes:
     postgres_data:
