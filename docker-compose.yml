@@ -27,7 +27,7 @@ services:
     
     clickhouse:
         image: clickhouse/clickhouse-server:latest
-        container_name: clickhouse
+        container_name: clickhouse_big_data_lab2
         environment:
             CLICKHOUSE_USER: clickhouse
             CLICKHOUSE_PASSWORD: password
